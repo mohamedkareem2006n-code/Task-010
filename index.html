@@ -9,55 +9,138 @@
       td {
         border: 1px solid black;
       }
+      table {
+        border-collapse: collapse;
+        width: 50%;
+      }
+      td {
+        text-align: center;
+      }
+      tr:nth-child(even) {
+        background-color: #d6eeee;
+      }
+      .center {
+        text-align: center;
+      }
+      .contact-form {
+        width: 50%;
+        margin-top: 40px;
+        padding: 20px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0, 05);
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+      label {
+        font-weight: 600;
+        font-size: 1.1rem;
+        display: block;
+        margin-bottom: 5px;
+      }
+      input[type="text"],
+      input[type="email"] {
+        width: 100%;
+        height: 38px;
+        border: 2px solid #777;
+        border-radius: 6px;
+        padding: 6px 10px;
+        font-size: 1rem;
+        box-sizing: border-box;
+        transition: border-color 0.3s ease;
+      }
+      input[type="text"]:focus,
+      input[type="email"]:focus {
+        border-color: #007bff;
+        outline: none;
+      }
+      button {
+        width: 100px;
+        padding: 10px 0;
+        font-size: 1rem;
+        border-radius: 6px;
+        border: none;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+        align-self: flex-start;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      .content-section p {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+      }
     </style>
   </head>
   <body>
-    <h1>التواصل</h1>
-    <form>
-      <label for="name">الاسم:</label>
-      <br>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        placeholder="ادخل اسمك"
-        required/>
-      <br>
+    <section class="contact-form" aria-label="نموذج التواصل">
+      <h1>التواصل</h1>
+      <form id="contactForm" onsubmit="return handlsubmit(even)">
+        <label for="name">الاسم:</label>
+        <br />
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="ادخل اسمك"
+          required
+        />
+        <br />
+        <br />
+        <label for="email">البريد الكتروني:</label>
+        <br />
+        <input
+          type="email"
+          name="email"
+          id="email"
+          name="email"
+          placeholder="ادخل بريدك الاكتروني"
+        />
+        <br />
+        <br />
+        <button type="submit">ارسال</button>
+      </form>
+      <p
+        id="formMessage"
+        aria-live="polite"
+        style="color: green; font-weight: bold; display: none; margin-top: 10px"
+      ></p>
+    </section>
+    <hr />
+    <section>
+      <h2 class="center">أهميه تعلم البرمجة</h2>
+      <p class="p1">
+        البرمجة هي لغة العصر الحديث، فهي تساعدك على فهم كيف تعمل التكنولوجيا من
+        حولنا. تعلم البرمجة يفتح أمامك آفاقاً واسعة في سوق العمل ويمنحك القدرة على
+        حل المشكلات بطريقة منطقية ومنظمة.
+      </p>
+    </section>
+      <hr />
+      <section>
+        <p class="p2">
+          من خلال البرمجة يمكنك إنشاء تطبيقات ومواقع ويب تخدم ملايين الأشخاص حول
+          العالم. كما أنها تطور مهارات التفكير النقدي والإبداع وتعلمك كيفية تقسيم
+          المشكلات الكبيرة إلى أجزاء صغيرة قابلة للحل.
+        </p>
+      </section>
+    <hr />
+    <section>
+      <p class="p3">
+        في المستقبل، ستصبح البرمجة مهارة أساسية مثل القراءة والكتابة. لذلك من
+        المهم البدء في تعلمها الآن للاستعداد لسوق العمل المستقبلي والاستفادة من
+        الفرص اللامتناهية التي توفرها التكنولوجيا.
+      </section>
+      <section>
+      </p>
+      <a href="#"> اقرأ المزيد</a>
+      <hr />
+    </section>
       <br />
-      <label for="email">البريد الكتروني:</label>
-      <br>
-      <input
-        type="email"
-        name="email"
-        id="email"
-        name="email"
-        placeholder="ادخل بريدك الاكتروني"
-      />
-      <button type="submit">ارسال</button>
-    </form>
-    <hr>
-    <h2>أهميه تعلم البرمجة</h2>
-    <p>
-      البرمجة هي لغة العصر الحديث، فهي تساعدك على فهم كيف تعمل التكنولوجيا من
-      حولنا. تعلم البرمجة يفتح أمامك آفاقاً واسعة في سوق العمل ويمنحك القدرة على
-      حل المشكلات بطريقة منطقية ومنظمة.
-    </p>
-    <hr />
-    <p>
-      من خلال البرمجة يمكنك إنشاء تطبيقات ومواقع ويب تخدم ملايين الأشخاص حول
-      العالم. كما أنها تطور مهارات التفكير النقدي والإبداع وتعلمك كيفية تقسيم
-      المشكلات الكبيرة إلى أجزاء صغيرة قابلة للحل.
-    </p>
-    <hr />
-    <p>
-      في المستقبل، ستصبح البرمجة مهارة أساسية مثل القراءة والكتابة. لذلك من
-      المهم البدء في تعلمها الآن للاستعداد لسوق العمل المستقبلي والاستفادة من
-      الفرص اللامتناهية التي توفرها التكنولوجيا.
-    </p>
-    <a href="#"> اقرأ المزيد</a>
-    <hr />
-    <br>
-    <table style="width: 30%;">
+    <table>
       <tr>
         <th>الاسم</th>
         <th>العمر</th>
@@ -84,8 +167,8 @@
         <td>الكويت</td>
       </tr>
     </table>
-    <br>
-    <hr>
+    <br />
+    <hr />
     <h2>قائمة التسوق:</h2>
     <p>المنتجات:</p>
     <ul>
@@ -95,7 +178,7 @@
       <li>جبن</li>
       <li>تفاح</li>
     </ul>
-    <hr>
+    <hr />
     <h2>خطوات التسوق:</h2>
     <ol>
       <li>اكتب قائمةالمنتجات المطلوبة</li>
@@ -104,6 +187,6 @@
       <li>ابحث عن المنتجات واجمعها</li>
       <li>ادفع في الكاشير</li>
     </ol>
-    <hr>
+    <hr />
   </body>
 </html>
